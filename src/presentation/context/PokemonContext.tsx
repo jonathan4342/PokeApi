@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { PokemonDetailsDTO } from '../../infrastructure/dtos/DetailsPokemons';
 
@@ -12,7 +13,7 @@ interface PokemonProviderProps {
     children: ReactNode;
 }
 
-const PokemonContext = createContext<PokemonContextType | undefined>(undefined);
+export const PokemonContext = createContext<PokemonContextType | undefined>(undefined);
 
 export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) => {
     const [pokemonData, setPokemonData] = useState<PokemonDetailsDTO[]>();

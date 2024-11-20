@@ -8,6 +8,7 @@ export const Container = styled.div`
     width: 100%;
     background-color: #0F0F0F;
     height: 100vh;
+    gap: 1rem;
 `;
 
 export const ContainerDetails = styled.div`
@@ -21,12 +22,3 @@ export const ContainerDetails = styled.div`
     height: 60%;
 `;
 
-export const Pagination =  styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 4rem;
-    gap:1rem;
-    width: 20rem;
-`;

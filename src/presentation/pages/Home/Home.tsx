@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from "react"
-import { Header } from "../../molecules/header/Header"
 import { Container, ContainerDetails } from "./Home.style"
 import { GetAllPokemonServiceImpl } from "../../../application/application_services/GetAllPokemonServiceImpl"
 import { Card } from "../../atoms/card/Card"
 import { Loading } from "../../atoms/loading/Loading"
 import { usePokemonContext } from "../../context/PokemonContext"
+import { NotFound } from "../../atoms/nofound/NoFound"
+import { Header } from "../../organisms/header/Header"
 
 
 function App() {
@@ -34,11 +35,11 @@ function App() {
 
   return (
     <Container>
-      <Header setCurrentPage={setCurrentPage} currentPage={currentPage} resultsPerPage={resultsPerPage}/>
+      <Header setCurrentPage={setCurrentPage} currentPage={currentPage} />
       (
         {loading ? <Loading/> : (
           <ContainerDetails >
-            {filteredPokemon.length==0?<h1>NO HAY POKEMONES</h1>:filteredPokemon?.map((pokemon) => (
+            {filteredPokemon.length==0?<NotFound/>:filteredPokemon?.map((pokemon) => (
               <Card details={pokemon} />
             ))}
           </ContainerDetails>

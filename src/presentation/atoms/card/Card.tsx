@@ -13,6 +13,7 @@ export const Card = ({details}:CardProps)=>{
     };
     return(
         <ContainerCard
+            role="button"
             border={backgroundColor}
             onClick={handleClick} 
         >

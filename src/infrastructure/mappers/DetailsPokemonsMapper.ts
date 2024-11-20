@@ -1,4 +1,4 @@
-import { IMapper } from "../../common/IMapper"
+import { IMapper } from "../../domain/value_objects/IMapper"
 import { PokemonDetails } from "../../domain/value_objects/PokemonDetails.interface"
 import {  PokemonDetailsDTO } from "../dtos/DetailsPokemons"
 

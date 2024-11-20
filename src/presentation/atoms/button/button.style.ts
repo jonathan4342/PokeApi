@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { ButtonProps } from './button.interface';
 
-export const StyledButton = styled.button<{ bgColor?: string }>`
+export const StyledButton = styled.button<ButtonProps>`
   padding: 10px 20px;
   border: none;
   background-color: ${(props) => props.bgColor || 'blue'};

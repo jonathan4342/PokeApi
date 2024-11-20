@@ -27,6 +27,7 @@ function App() {
     };
     fetchData();
   }, [iGetAllPokemonServiceImpl, currentPage, setPokemonData]);
+  
   const filteredPokemon = pokemonData?.filter(pokemon => 
     pokemon.getName().toLowerCase().includes(filter.toLowerCase())
   );

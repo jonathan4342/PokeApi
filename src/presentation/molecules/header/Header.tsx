@@ -41,7 +41,6 @@ export const Header = ({ setCurrentPage, currentPage }: HeaderProps) => {
             <ContainerInput>
                 <Input placeholder="Buscar pokemon" value={filter} onChange={handleFilterChange} />
                 <Pagination>
-                        {/* Rango de páginas dinámico */}
                         {Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index).map((pageNumber) => (
                             <Button bgColor='white'
                                 key={pageNumber}

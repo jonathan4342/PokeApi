@@ -4,6 +4,7 @@ export const ContainerHeader = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 20%;

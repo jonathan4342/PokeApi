@@ -61,6 +61,7 @@ export const ContainerImage = styled.div<{ backgroundColor: string }>`
     background-color: ${props => props.backgroundColor};
     width: 100%;
     height: 100%;
+    border-radius: 1rem 1rem 0rem 0rem;
 `;
 
 export const ContainerDetails = styled.div<{ backgroundColor: string }>`

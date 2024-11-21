@@ -32,7 +32,14 @@ export const Card = ({ details }: CardProps) => {
                     <ContainerDetails backgroundColor={backgroundColor}>
                         <p>Height: {details.getHeight() / 10} M</p>
                         <p>Weight: {details.getWeight() / 10} Kg</p>
-                        <p>Types: {details.getTypes().join(", ")}</p>
+                        <p>Types:</p>
+                        <Abilities>
+                            {details.getTypes().map((e, index) => (
+                                <ContainerAbilities key={index} border={backgroundColor}>
+                                    {e}
+                                </ContainerAbilities>
+                            ))}
+                        </Abilities>
                         <p>Abilities:</p>
                         <Abilities>
                             {details.getAbilities().map((e, index) => (

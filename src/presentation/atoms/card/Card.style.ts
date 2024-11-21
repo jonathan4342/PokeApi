@@ -1,27 +1,12 @@
 import styled from "styled-components";
 
-export const ContainerCard = styled.div<{ border: string }>`
-    width: 20rem; 
-    margin-bottom: 2rem;
-    background-color:#fff;
-    cursor: pointer;
-    border-radius: 1rem;
+export const ContainerCard = styled.div<{ border: string; isSelected: boolean }>`
+    width: 20rem;
     height: 25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    position: relative;
-    border: 5px solid transparent; 
-    border-image-slice: 1;
+    margin-bottom: 2rem;
+    perspective: 1000px; 
+    cursor: pointer;
     border-color: ${props => props.border};
-    
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(255, 0, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.6);
-    }
-
     .pokemon-image {
         display: block;
     }
@@ -33,6 +18,42 @@ export const ContainerCard = styled.div<{ border: string }>`
     }
 `;
 
+export const CardInner = styled.div<{ isSelected: boolean,border: string;  }>`
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform: ${({ isSelected }) => (isSelected ? "rotateY(-180deg)" : "rotateX(0)")};
+    border-color: ${props => props.border};
+`;
+
+export const CardFront = styled.div<{ backgroundColor: string }>`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const CardBack = styled.div<{ backgroundColor: string }>`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta el frente */
+    transform: rotateY(-180deg);
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
 export const ContainerImage = styled.div<{ backgroundColor: string }>`
     display: flex;
     justify-content: center;
@@ -40,7 +61,6 @@ export const ContainerImage = styled.div<{ backgroundColor: string }>`
     background-color: ${props => props.backgroundColor};
     width: 100%;
     height: 100%;
-    border-radius: .5rem 10rem ;
 `;
 
 export const ContainerDetails = styled.div<{ backgroundColor: string }>`
@@ -51,12 +71,12 @@ export const ContainerDetails = styled.div<{ backgroundColor: string }>`
     font-size: 1rem;
     text-align: center;
     color:white;
+    border-radius: 1rem ;
 
     padding: 1rem;
     background-color: ${props => props.backgroundColor};
     width: 100%;
     height: 100%;
-    border-radius: .5rem 10rem ;
 `;
 export const Abilities =styled.div`
     display: flex;
@@ -76,4 +96,4 @@ export const ContainerAbilities =  styled.div<{ border: string }>`
     border-radius: 1rem;
     background-color: white;
     border: .2rem ${props => props.border} solid;
-`;
+`; 

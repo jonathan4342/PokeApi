@@ -32,7 +32,7 @@ export const Pagination = ({ setCurrentPage, currentPage }: HeaderProps) => {
 
     return (
         <ContainerInput>
-            <Input placeholder="Buscar pokemon" value={filter} onChange={handleFilterChange} />
+            <Input placeholder="Search for  a pokemon" value={filter} onChange={handleFilterChange} />
             <ContainerPagination>
                 {Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index).map((pageNumber) => (
                     <Button bgColor='white'
